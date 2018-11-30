@@ -1,8 +1,8 @@
-# Oxidized Web [![Build Status](https://travis-ci.com/ytti/oxidized-web.svg)](https://travis-ci.com/ytti/oxidized-web) [![Gem Version](https://badge.fury.io/rb/oxidized-web.svg)](http://badge.fury.io/rb/oxidized-web)
+# Oxidized Web [![Build Status](https://travis-ci.com/INTERDATA-FR/oxidized-web.svg)](https://travis-ci.com/INTERDATA-FR/oxidized-web) [![Gem Version](https://badge.fury.io/rb/oxidized-web.svg)](http://badge.fury.io/rb/oxidized-web)
 
 Web userinterface and RESTful API for Oxidized.
 
-This is not useful independently, see https://github.com/ytti/oxidized for install instructions
+This is not useful independently, see https://github.com/INTERDATA-FR/oxidized for install instructions
 
 Live demo: http://oxidized.arahant.net
 

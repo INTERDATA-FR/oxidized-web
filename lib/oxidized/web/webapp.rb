@@ -142,6 +142,27 @@ module Oxidized
         migration.go_rancid_migration
         redirect url_for('//nodes')
       end
+      
+      # redirect to the web page for router.db edition
+      get '/router' do
+        router_file = File.read("/home/oxidized/.config/oxidized/router.db")
+        haml :router, layout: true, :locals => {:router_file => router_file}
+      end
+
+      # save router.db file
+      post '/router' do
+        router_file = params['router_file']
+        router_path = params['router_path']
+        #if router_file 
+        File.rename(router_path,router_path + "." + Time.now.strftime("%Y%m%d-%H%M"))
+        File.write(router_path,router_file)
+        haml :router, layout: true, :locals => {:router_file => router_file}
+      end
+      
+      # ajax
+      post '/ajax_router' do
+        File.read(params['router_path'])
+      end
 
       get '/css/*.css' do
         sass "sass/#{params[:splat].first}".to_sym

@@ -1,0 +1,25 @@
+%script{src: url_for('/scripts/script-router.js')}
+%h2
+  EDIT router.db 
+%form.form-horizontal{method: 'post', enctype: 'multipart/form-data',
+                      role: 'form'}
+  .form-group
+    %label.col-sm-3{for: 'router_path'}
+      Oxidized router.db Path
+    .col-sm-5
+      %select.form-control#router_path{name: 'router_path'}
+        - array = Dir["/home/oxidized/.config/oxidized/router.db*"].sort
+        - array.each do |file_name|
+        - next if File.directory? file_name
+          %option{value: file_name} #{file_name}
+
+    .col-sm-3
+      %button.btn.btn-default#load_button{type: 'button'} Load!
+
+  .form-group
+    .col-sm-12
+      %textarea.form-control{rows: '15', name: 'router_file'} #{router_file}
+
+  .form-group
+    .col-sm-12
+      %button.btn.btn-primary#save_button{type: 'submit'} Save! 
